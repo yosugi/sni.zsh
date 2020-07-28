@@ -91,7 +91,7 @@ function _sni-print-z() {
 }
 
 function _sni-trim() {
-    sed -e 's/^[ \t]*//' -e 's/[ \t]*$//'
+    sed -e "s/^[ $(printf "\t")]*//" -e "s/[ $(printf "\t")]*$//"
 }
 
 function _sni-remove-comment() {

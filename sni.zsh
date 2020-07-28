@@ -186,7 +186,7 @@ function _sni-get-local-sni-files() {
 }
 
 function _sni-version() {
-    echo "0.1.0"
+    echo "0.1.1"
 }
 
 function _sni-help() {

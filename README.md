@@ -46,8 +46,8 @@ Version:
 
 ```
 $ git clone https://github.com/yosugi/sni.zsh
-$ cp sni/sni.zsh ~/.sni.zsh
-$ echo '[ -f ~/.sni.zsh ] && source ~/.sni.zsh' >> ~/.zshrc
+$ mv sni.zsh/ ~/.sni.zsh/
+$ echo '[ -f ~/.sni.zsh/sni.zsh ] && source ~/.sni.zsh/sni.zsh' >> ~/.zshrc
 $ source ~/.zshrc
 $ sni init
 ```

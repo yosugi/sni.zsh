@@ -50,6 +50,12 @@ function sni() {
     local sni_files
     sni_files=$(_sni-get-local-sni-files "$sni_root" "$SNI_FILENAME" "$PWD"; echo "$SNI_GLOBAL_FILE_PATH")
 
+    # init
+    if [[ $cmd == "init" || $cmd == "i" ]]; then
+        echo "$sni_files" | _sni-init $SNI_ENABLE_DIRECTORY_SNIPPET
+        return
+    fi
+
     # select exists file
     sni_exists_files=$(echo "$sni_files" | _sni-select-exists-files)
     if [[ -z "$sni_exists_files" ]]; then
@@ -62,8 +68,6 @@ function sni() {
             echo "$sni_exists_files" | _sni-select $SNI_FINDER;;
         ("e"|"edit")
             echo "$sni_exists_files" | _sni-edit $SNI_FINDER $SNI_EDITOR;;
-        ("i"|"init")
-            echo "$sni_files" | _sni-init $SNI_ENABLE_DIRECTORY_SNIPPET;;
         ("f"|"file")
             echo "$sni_exists_files";;
         ("a"|"all")
